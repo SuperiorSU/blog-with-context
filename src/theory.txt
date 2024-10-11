@@ -1,0 +1,15 @@
+context mean the data at a particular instatnt of time.
+We know that there might e components that are interdependent on each other, { through parent to child tree or child to parent }. So we use prop drilling(parent to child) and prop lifting (child to parent) to use methods to access and modify the components.
+But as number of components increases, the performance and readability of the app decreases.
+If there are multiple inherited  components within a component, we cannot pass the data directly to any of the inherited component. To do so we need to pass each chain of component the same data inorder to pass to another chain until it reaches the desired component.
+
+To make it simple, we use contextAPI. Let's say we make a container of data that is accessible to all the components, parent and children alike
+
+To make the container, we need to be able to have the data that needs to used in the context so that we can pass to the components.
+
+Three rules of content-> *Creation of context ie container with required data is created
+                         *Provision of context ie the data inside the context should be the data that will be use by the components
+                         *Consuming of Context ie the components will use the data from the context 
+
+API = "https://codehelp-apis.vercel.app/api/get-blogs"
+to use the context we use useContext hook in the desired component
